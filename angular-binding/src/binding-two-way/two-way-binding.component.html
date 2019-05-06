@@ -1,0 +1,18 @@
+<h2><b>Two Way Binding</b></h2>
+<div>
+	Enter NAME here: <input type="text" [(ngModel)]="showOutput">
+</div>
+<div>
+  Your NAME is: <p>{{showOutput}}</p>
+</div>
+<br>
+<div>
+	<label>Enter ADDRESS here: <input [(ngModel)]="address" placeholder="address"></label>
+  <br>Your ADDRES is: {{address}}
+</div>
+
+<br>
+Component Messge is: {{componentMessage}}
+<br><br>
+<input type="text" [value]='name'/><br><br>
+<button (click)='clickMe()'>Click Me</button>

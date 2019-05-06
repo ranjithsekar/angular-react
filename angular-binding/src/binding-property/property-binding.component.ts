@@ -2,11 +2,11 @@ import { Component} from '@angular/core';
 
 @Component({
   selector: 'property-binding',
-  template: `<h4>Property Binding:</h4>
+  template: `<h2><b>Property Binding:</b></h2>
               First Name: {{ firstname }} <br>
               Last Name: {{ lastname }} <br>
               Age: <input type='text' [value]='age'> <br>
-              About Me: <p [innerHtml]='aboutme'></p>
+              About Me: <span [innerHtml]='aboutme'></span><br><br>
               <button bind-disabled='login'>Login</button> <br><br>
               <button [disabled]='reset'>Reset</button><br><br>
               Message: {{message}}`,
@@ -19,8 +19,9 @@ export class PropertyBindingComponent {
   aboutme = "I am a World class Tennis Player";
   login: boolean = false;
   reset: boolean = true;
-  message: any;
+  message: string = 'welcome to property binding!!!';
 
+  
 }
 
 
