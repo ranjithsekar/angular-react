@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { RandomService } from './random.service';
-import { GreetingService } from '../providedin/greeting.service';
+import { GreetingService } from '../provided-in/greeting.service';
 
 @Component({
   selector: 'random',

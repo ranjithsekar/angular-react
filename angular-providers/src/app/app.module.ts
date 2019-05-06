@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { RandomComponent } from '../providers/random.component';
-import { GreetingComponent } from '../provide-din/greeting.component';
+import { GreetingComponent } from '../provided-in/greeting.component';
 import { CalcComponent } from '../provided-in/calc.component';
 
 @NgModule({
