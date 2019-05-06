@@ -8,7 +8,7 @@ import { PropertyBindingComponent } from '../property-binding/property-binding.c
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent, HelloComponent, PropertyBindingComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
