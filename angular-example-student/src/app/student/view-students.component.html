@@ -1,0 +1,27 @@
+<div class="panel panel-default" *ngFor="let student of students">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{student.firstname}}</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="cols-xs-10">
+            <div class="row">
+                <div class="col-xs-4">
+                    <img class="photo-class" [src]="student.photo" />
+                </div>
+                <div class="col-xs-8">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            First Name:
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            {{student.firstname}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
