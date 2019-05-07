@@ -1,0 +1,27 @@
+<h2>My Products</h2>
+<ul class="products">
+	<li *ngFor="let product of products">
+		<a routerLink="/detail/{{product.id}}">
+			<span class="badge">{{product.id}}</span> {{product.name}}
+    </a>
+  </li>
+</ul>
+
+<app-product-detail [prod]="selectedProduct"></app-product-detail>
+
+<div>
+  <table>
+    <tr><td>Name:</td><td></td><input #prodName></tr>
+    <tr><td>Type:</td><td></td><input #prodType></tr>  
+    <tr><td>Price:</td><td></td><input #prodPrice></tr>    
+  </table>  
+  <button (click)="add(prodName.value, prodType.value, prodPrice.value ); prodName.value=''; prodType.value=''; prodPrice.value=''">ADD</button>
+</div>
+<!--<label>Product Name: <input #prodName></label> &nbsp;
+  <label>Product Type: <input #prodType></label> &nbsp;
+  	<li *ngFor="let product of products" 
+      [class.selected]="product === selectedProduct"
+      (click)='onSelect(product)'>
+		<span class="badge">{{product.id}}</span>{{product.name}}
+  </li>
+-->

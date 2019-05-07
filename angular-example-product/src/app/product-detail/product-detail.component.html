@@ -1,0 +1,20 @@
+<div *ngIf="prod">
+	<h2>{{prod.name | uppercase}} Details</h2>
+	<div><label>Name: <input [(ngModel)]="prod.name" placeholder="name"/> </label> &nbsp; <button (click)="save()">SAVE</button><div>
+  <br>
+  <table border="1">
+    <tr><th>ID</th>
+    <th>NAME</th>
+    <th>TYPE</th>
+    <th>PRICE</th>
+    </tr><tr>
+      <td>{{prod.id}}</td>
+      <td>{{prod.name}}</td>
+      <td>{{prod.type}}</td>
+      <td>{{prod.price}}</td>
+    </tr>
+  </table>
+</div>
+<br>
+ 
+<button (click)="goBack()">BACK</button>
