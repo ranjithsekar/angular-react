@@ -1,2 +1,0 @@
-~angular/angular-binding> npm install
-~angular/angular-binding> ng serve
