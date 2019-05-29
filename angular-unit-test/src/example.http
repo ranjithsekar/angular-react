@@ -1,0 +1,2 @@
+// INSTALL REST Client Plugin
+GET https://api.github.com/users
