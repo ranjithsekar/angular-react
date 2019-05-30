@@ -1,0 +1,104 @@
+<form #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Add Student</h3>
+		</div>
+
+		<div class="panel-body">
+
+			<div class="form-group" [class.has-error]="name.invalid && name.touched"
+        [class.has-success]="name.valid">
+				<label for="name" class="control-label">Name</label>
+        <input type="text" required id="name" [(ngModel)]="student.fullname" name="name" class="form-control" 
+        #name="ngModel" >
+        <span class="help-block" *ngIf="name.invalid && name.touched">Name Required</span>
+			</div> 
+     
+     <div class="row">
+     	<div class="form-group col-md-4">
+				<label for="dateOfBirth">Date of Birth</label>
+        <input type="text" id="dateOfBirth" bsDatepicker [bsConfig]="datePickerConfig" [(ngModel)]="student.dateOfBirth" name="dateOfBirth" class="form-control" placement="right"/>
+			</div>
+     </div>
+
+      <div class="form-group">
+				<label for="photo">Photo</label>
+        <input type="text" id="photo" required [(ngModel)]="photo" name="photo" class="form-control"/>
+			</div>
+
+      <div class="form-group">
+        <button type="button" (click)="togglePhotoPreview()" class="btn btn-primary">{{photoPreview ? "Hide" : "Show"}} Preview</button>
+      </div>
+
+      <div class="form-group">
+        <img [src]="photo" *ngIf="photoPreview" height="100" width="100">
+      </div>
+
+      <div class="form-group">
+				<label>Gender</label>
+        <div class="form-control">
+        <label class="radio-inline">
+        <input type="radio" name="gender" value = "male" [(ngModel)]="gender"/> Male
+        </label>
+        <label class="radio-inline">
+        <input type="radio" name="gender" value = "female" [(ngModel)]="gender"/> Female
+        </label>
+        </div>
+			</div> 
+
+      <div class="form-group" [class.has-error]="phoneControl.invalid">
+				<label for="phone" class="control-label">Phone</label>
+        <input type="text" id="phone" [(ngModel)]="phone" name="phone" class="form-control" 
+        #phoneControl="ngModel" >
+        <span class="help-block" *ngIf="phoneControl.invalid">Phone No Required</span>
+			</div>  
+
+      <div class="form-group">
+				<label for="email">Email</label>
+        <input type="text" id="email" [(ngModel)]="email" name="email" class="form-control"/>
+			</div>   
+
+      	<div class="form-group">
+				<label for="address">Address</label>
+        <input type="text" id="address" [(ngModel)]="address" name="address" class="form-control"/>
+			</div>     
+
+      <div class="form-group">
+				<label>Known Languages</label>
+        <div class="form-control">
+        <label class="checkbox-inline">
+        <input type="checkbox" name="english" value = "english" [(ngModel)]="english"/> English
+        </label>
+        <label class="checkbox-inline">
+        <input type="checkbox" name="tamil" value = "tamil" [(ngModel)]="tamil"/> Tamil
+        </label>
+        </div>
+			</div>
+
+      <div class="form-group">
+				<label for="department">Department</label>
+        <select id="department" name="department" [(ngModel)]="student.department" class="form-control">
+          <option *ngFor="let dept of departments" [value]="dept.id">{{dept.name}}</option>
+        </select>
+			</div>
+
+    </div>    
+
+	<div class="panel-footer">
+		<button type="submit" class="btn btn-primary" [disabled]="studentForm.invalid">Add</button>
+	</div>
+  </div>
+</form>
+
+Submitted Value: {{studentForm.value | json}}
+<br>
+Student value: {{student | json}}
+
+<!--<br><br>
+ <div class="table-responsive">FORM VALIDATION
+<table class="table">
+<tr><td>Touched: {{studentForm.touched}}<td><td>UnTouched: {{studentForm.untouched}}</td></tr>
+<tr><td>Pristing: {{studentForm.pristine}}<td><td>Dirty: {{studentForm.dirty}}</td></tr>
+<tr><td>Valid: {{studentForm.valid}}<td><td>Invalid: {{studentForm.invalid}}</td></tr>
+</table>
+ </div>-->
