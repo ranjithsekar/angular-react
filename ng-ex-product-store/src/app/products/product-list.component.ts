@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../model/product';
-import { MOCK_PRODUCTS } from '../assets/mock-products';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,8 +11,9 @@ export class ProductListComponent implements OnInit {
 
   pageTitle: string;
   showImage = false;
-  products: IProduct[] = MOCK_PRODUCTS;
+  products: IProduct[];
   filteredProducts: IProduct[];
+  errorMessage: string;
 
   filterVal: string;
   get filterValue(): string {
@@ -23,11 +24,17 @@ export class ProductListComponent implements OnInit {
     this.filteredProducts = this.filterValue ? this.filter(this.filterValue) : this.products;
   }
 
-  constructor() {
-    this.filteredProducts = this.products;
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit() {
+    this.productService.getProducts().subscribe(
+      response => {
+        this.products = response;
+        this.filteredProducts = this.products;
+      },
+      error => this.errorMessage = <any>error
+    );
   }
 
   onRatingClicked(messge: string): void {

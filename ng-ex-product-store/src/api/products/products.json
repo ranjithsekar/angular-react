@@ -1,0 +1,39 @@
+[
+    {
+        "image": "https://publicdomainvectors.org/photos/1307364291.png",
+        "name": "Mobile",
+        "model": "M1",
+        "brand": "Samsung",
+        "price": 200,
+        "rating": "4.4",
+        "modelno": "AN-b5"
+    },
+    {
+        "image": "https://publicdomainvectors.org/photos/laptop-computer-5-pdv.jpg",
+        "name": "Laptop",
+        "model": "M2",
+        "brand": "Dell",
+        "price": 300,
+        "rating": "3.2",
+        "modelno": "NC-f7"
+    },
+    {
+        "image": "https://publicdomainvectors.org/tn_img/BenBois-iPhone-SVG.png",
+        "name": "Mobile",
+        "model": "M3",
+        "brand": "MI",
+        "price": 400,
+        "rating": "4.8",
+        "modelno": "bb-79"
+    },
+    {
+        "image": "https://publicdomainvectors.org/tn_img/televisore_telecomando_a_01.png",
+        "name": "Television",
+        "model": "M1",
+        "brand": "Sony",
+        "price": 500,
+        "rating": "3.8",
+        "modelno": "dfdf-33"
+    }
+
+]
