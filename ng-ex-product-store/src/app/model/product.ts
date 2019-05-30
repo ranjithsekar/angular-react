@@ -1,4 +1,4 @@
-export interface Product {
+export interface IProduct {
     image: string;
     name: string;
     model: string;
@@ -6,4 +6,5 @@ export interface Product {
     price: number;
     availablity: boolean;
     rating: string;
+    modelno: string;
 }

@@ -1,21 +1,23 @@
-import { Product } from './../model/product';
-export const MOCK_PRODUCTS: Product[] = [
+import { IProduct } from './../model/product';
+export const MOCK_PRODUCTS: IProduct[] = [
     {
-        image: '',
-        name: 'Prod 1',
+        image: 'https://publicdomainvectors.org/photos/1307364291.png',
+        name: 'Mobile',
         model: 'Model 1',
-        brand: 'Brand 1',
+        brand: 'Samsung',
         price: 200,
         availablity: true,
-        rating: '5'
+        rating: '4.4',
+        modelno: 'AN-b5'
     },
     {
-        image: '',
-        name: 'Prod 2',
+        image: 'https://publicdomainvectors.org/photos/laptop-computer-5-pdv.jpg',
+        name: 'Laptop',
         model: 'Model 2',
-        brand: 'Brand 3',
+        brand: 'Dell',
         price: 300,
         availablity: false,
-        rating: '4'
+        rating: '3.2',
+        modelno: 'NC-f7'
     }
 ];

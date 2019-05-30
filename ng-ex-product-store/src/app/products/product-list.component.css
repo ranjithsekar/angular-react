@@ -1,0 +1,16 @@
+.photo-class{
+    width: 50px;
+    height: 50px
+}
+
+thead{
+    color: blue
+}
+
+.panel-class{
+    background-color: orange
+}
+
+table {
+    background-color: bisque
+}

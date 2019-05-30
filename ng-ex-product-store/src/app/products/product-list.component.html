@@ -1,28 +1,28 @@
 <div class='card'>
-  <div class='card-header'>
+  <div class='card-header panel-class'>
     <h4>{{pageTitle}}</h4>
   </div>
 
   <div class='card-body'>
     <div class='row'>
       <div class='col-md-2'>
-        <h5> Filter By:</h5>
+        <h6> Filter By:</h6>
       </div>
       <div class='col-md-4'>
-        <input type='text' />
+        <input type='text' [(ngModel)]='filterValue' />
       </div>
     </div>
     <div class='row'>
       <div class='col-md-2'>
-        <h5>Filtered By:</h5>
+        <h6>Filtered By: {{filterValue}}</h6>
       </div>
     </div>
     <div class='table-responsive'>
       <table class='table' *ngIf='products && products.length > 0'>
         <thead>
           <th>
-            <button class='btn btn-primary'>
-              Show Image
+            <button class='btn btn-primary' (click)='toggleImage()'>
+              {{showImage ? 'Hide': 'Show'}} Image
             </button></th>
           <th>Product Name</th>
           <th>Model</th>
@@ -30,16 +30,18 @@
           <th>Price</th>
           <th>Available</th>
           <th>Rating</th>
+          <th>Model Number</th>
         </thead>
         <tbody>
-          <tr *ngFor='let product of products'>
-            <td></td>
+          <tr *ngFor='let product of filteredProducts'>
+            <td><img *ngIf='showImage' class='photo-class' [src]='product.image'></td>
             <td>{{product.name}}</td>
             <td>{{product.model}}</td>
             <td>{{product.brand}}</td>
-            <td>{{product.price}}</td>
+            <td>{{product.price | currency:'INR'}}</td>
             <td>{{product.availablity}}</td>
             <td>{{product.rating}}</td>
+            <td>{{product.modelno | lowercase | convertToSpace: '-'}}</td>
           </tr>
         </tbody>
       </table>
