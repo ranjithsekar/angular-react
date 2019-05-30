@@ -9,16 +9,15 @@ import { MOCK_PRODUCTS } from '../assets/mock-products';
 })
 export class ProductListComponent implements OnInit {
 
-  pageTitle = 'Product List';
+  pageTitle: string;
+  showImage = false;
   products: IProduct[] = MOCK_PRODUCTS;
   filteredProducts: IProduct[];
-  showImage = false;
-  filterVal: string;
 
+  filterVal: string;
   get filterValue(): string {
     return this.filterVal;
   }
-
   set filterValue(value: string) {
     this.filterVal = value;
     this.filteredProducts = this.filterValue ? this.filter(this.filterValue) : this.products;
@@ -31,13 +30,18 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onRatingClicked(messge: string): void {
+    this.pageTitle = 'Product List: ' + messge;
+  }
+
   filter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
 
-    return this.products.filter((product: IProduct) => {
-      product.name.toLocaleLowerCase().indexOf(filterBy) !== -1;
-    });
+    return this.products.filter((product: IProduct) =>
+      product.name.toLocaleLowerCase().indexOf(filterBy) !== -1);
+
   }
+
   toggleImage(): void {
     this.showImage = !this.showImage;
   }

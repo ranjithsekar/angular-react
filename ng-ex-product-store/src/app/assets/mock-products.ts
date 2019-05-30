@@ -6,7 +6,6 @@ export const MOCK_PRODUCTS: IProduct[] = [
         model: 'Model 1',
         brand: 'Samsung',
         price: 200,
-        availablity: true,
         rating: '4.4',
         modelno: 'AN-b5'
     },
@@ -16,8 +15,26 @@ export const MOCK_PRODUCTS: IProduct[] = [
         model: 'Model 2',
         brand: 'Dell',
         price: 300,
-        availablity: false,
         rating: '3.2',
         modelno: 'NC-f7'
+    },
+    {
+        image: 'https://publicdomainvectors.org/tn_img/BenBois-iPhone-SVG.png',
+        name: 'Mobile',
+        model: 'Model 3',
+        brand: 'MI',
+        price: 400,
+        rating: '4.8',
+        modelno: 'bb-79'
+    },
+    {
+        image: 'https://publicdomainvectors.org/tn_img/televisore_telecomando_a_01.png',
+        name: 'Television',
+        model: 'Model 1',
+        brand: 'Sony',
+        price: 500,
+        rating: '3.8',
+        modelno: 'dfdf-33'
     }
+
 ];
