@@ -1,6 +1,61 @@
-<div class='panel panel-primary' *ngFor='let student of students'>
-  <div class='panel-heading'>
-    <h3 class='panel-title'>{{student.fullname}}</h3>
+<div class="panel panel-primary" *ngFor="let student of students">
+  <div class="panel-default">
+    <h3 class="panel-title">{{student.fullname}}</h3>
   </div>
 
+  <div class="panel-body">
+    <div class="col-md-10">
+      <div class="row vertical-align">
+        <div class="col-md-2">
+          <img class="photo-class" [src]="student.photo" />
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-xs-6">
+              Full Name:
+            </div>
+            <div class="col-xs-6">
+              {{student.fullname}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Gender:
+            </div>
+            <div class="col-xs-6">
+              {{student.gender}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              Phone:
+            </div>
+            <div class="col-xs-6">
+              {{student.phone}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              Email:
+            </div>
+            <div class="col-xs-6">
+              {{student.email}}
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-xs-6">
+              Address:
+            </div>
+            <div class="col-xs-6">
+              {{student.address}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
