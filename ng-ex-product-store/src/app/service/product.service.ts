@@ -19,11 +19,6 @@ export class ProductService {
       catchError(this.handleError));
   }
 
-  getProductsFromApi1(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this.URL).pipe(
-      tap(data => console.log(data.length)),
-      catchError(this.handleError));
-  }
 
 
   private handleError(err: HttpErrorResponse) {
