@@ -1,5 +1,6 @@
 [
-    {
+    {   
+        "id": 100,
         "image": "https://publicdomainvectors.org/photos/1307364291.png",
         "name": "Mobile",
         "model": "M1",
@@ -9,6 +10,7 @@
         "modelno": "AN-b5"
     },
     {
+        "id": 200,
         "image": "https://publicdomainvectors.org/photos/laptop-computer-5-pdv.jpg",
         "name": "Laptop",
         "model": "M2",
@@ -18,6 +20,7 @@
         "modelno": "NC-f7"
     },
     {
+        "id": 300,
         "image": "https://publicdomainvectors.org/tn_img/BenBois-iPhone-SVG.png",
         "name": "Mobile",
         "model": "M3",
@@ -27,6 +30,7 @@
         "modelno": "bb-79"
     },
     {
+        "id": 400,
         "image": "https://publicdomainvectors.org/tn_img/televisore_telecomando_a_01.png",
         "name": "Television",
         "model": "M1",
@@ -35,5 +39,4 @@
         "rating": "3.8",
         "modelno": "dfdf-33"
     }
-
 ]

@@ -1,6 +1,7 @@
 import { IProduct } from './../model/product';
 export const MOCK_PRODUCTS: IProduct[] = [
     {
+        id: 100,
         image: 'https://publicdomainvectors.org/photos/1307364291.png',
         name: 'Mobile',
         model: 'Model 1',
@@ -10,6 +11,7 @@ export const MOCK_PRODUCTS: IProduct[] = [
         modelno: 'AN-b5'
     },
     {
+        id: 200,
         image: 'https://publicdomainvectors.org/photos/laptop-computer-5-pdv.jpg',
         name: 'Laptop',
         model: 'Model 2',
@@ -19,6 +21,7 @@ export const MOCK_PRODUCTS: IProduct[] = [
         modelno: 'NC-f7'
     },
     {
+        id: 300,
         image: 'https://publicdomainvectors.org/tn_img/BenBois-iPhone-SVG.png',
         name: 'Mobile',
         model: 'Model 3',
@@ -28,6 +31,7 @@ export const MOCK_PRODUCTS: IProduct[] = [
         modelno: 'bb-79'
     },
     {
+        id: 400,
         image: 'https://publicdomainvectors.org/tn_img/televisore_telecomando_a_01.png',
         name: 'Television',
         model: 'Model 1',

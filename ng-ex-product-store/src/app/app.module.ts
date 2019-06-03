@@ -5,27 +5,18 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './products/product-list.component';
-import { ConvertToSpacePipe } from './shared/convert-to-space.pipe';
-import { StarComponent } from './shared/star/star.component';
-import { ProductDetailComponent } from './products/product-detail.component';
 import { HomeComponent } from './home/home.component';
+import { ProductModule } from './products/product.module';
 
 @NgModule({
-  declarations: [
+  declarations: [ // component, directives & pipes
     AppComponent,
-    ProductListComponent,
-    ConvertToSpacePipe,
-    StarComponent,
-    ProductDetailComponent,
     HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule, HttpClientModule
+  imports: [ //
+    BrowserModule, FormsModule, HttpClientModule, ProductModule, AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // atleast 1 component
 })
 export class AppModule { }

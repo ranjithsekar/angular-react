@@ -34,7 +34,7 @@
         <tbody>
           <tr *ngFor='let product of filteredProducts'>
             <td><img *ngIf='showImage' class='photo-class' [src]='product.image'></td>
-            <td>{{product.name}}</td>
+            <td> <a [routerLink]="['/products', product.id]">{{product.name}}</a></td>
             <td>{{product.model}}</td>
             <td>{{product.brand}}</td>
             <td>{{product.price | currency:'INR'}}</td>

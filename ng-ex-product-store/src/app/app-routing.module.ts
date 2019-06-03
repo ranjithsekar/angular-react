@@ -1,3 +1,4 @@
+import { ProductDetailGuard } from './products/product-detail.guard';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { ProductListComponent } from './products/product-list.component';
@@ -6,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },
-  { path: 'products/:id', component: ProductDetailComponent },
+  { path: 'products/:id', canActivate: [ProductDetailGuard], component: ProductDetailComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent }
 ];
