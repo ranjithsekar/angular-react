@@ -1,34 +1,36 @@
 
 # CLI COMMANDS
 ## Install CLI:
-```bash
+```
 > npm uninstall -g @angular/cli
 > npm cache clean (--force)
 > npm install -g @angular/cli@latest
 ```
 
 ## Create & Deploy a New application
-```bash
+```
 > ng new hello-angular
 > cd hello-angular
+> ng serve -open
 > ng serve -o
+> ng serve --port 4300 -o
 ```
 
 ## Install Yarn:
-```bash
+```
 > npm uninstall -g yarn
 > npm install -g yarn
 ```
 
 ## Update a package: (package.json)
-```bash
+```
 > npm install
 > ng update
 > npm update
 ```
 
 ## Create Component:
-```bash
+```
 > ng generate component product --flat
 ```
 * flat - won't create sub folder
@@ -39,10 +41,21 @@
 	4. product.component.css
 
 ## Create Service:
-```bash
+```
 > ng g s product
 ```
 + g - generate, s - service
 + outputs:
 	1. product.service.ts
 	2. product.service.spec.ts
+
+
+## WARNINGs
+##### Warning
+Your global Angular CLI version (7.3.8) is greater than your local (during ng serve) <br>
+##### Solution
+```
+> ng update @angular/cli
+```
+
+## ERRORs
