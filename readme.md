@@ -1,23 +1,48 @@
-CLI COMMANDS
-Install CLI:
-> npm uninstall -g yarn <br>
-> npm install -g @angular/cli@latest <br>
-> npm install -g yarn <br>
 
-Install Yarn:
-> npm uninstall -g yarn <br>
-> npm install -g yarn <br>
+# CLI COMMANDS
+## Install CLI:
+```bash
+> npm uninstall -g @angular/cli
+> npm cache clean (--force)
+> npm install -g @angular/cli@latest
+```
 
-Update a package: (package.json)
-> npm install <br>
-> ng update <br>
-> npm update <br>
+## Create & Deploy a New application
+```bash
+> ng new hello-angular
+> cd hello-angular
+> ng serve -o
+```
 
-Create Component:
-> ng generate component product --flat <br>
-	* flat - won't create sub folder <br>
-	* ouputs: product.component.ts, product.component.spec.ts, product.component.html, product.component.css <br>
+## Install Yarn:
+```bash
+> npm uninstall -g yarn
+> npm install -g yarn
+```
 
-Create Service:
-> ng g s product <br>
-	* g - generate, s - service <br>
+## Update a package: (package.json)
+```bash
+> npm install
+> ng update
+> npm update
+```
+
+## Create Component:
+```bash
+> ng generate component product --flat
+```
+* flat - won't create sub folder
+* ouputs: 
+	1. product.component.ts, 
+	2. product.component.spec.ts
+	3. product.component.html
+	4. product.component.css
+
+## Create Service:
+```bash
+> ng g s product
+```
++ g - generate, s - service
++ outputs:
+	1. product.service.ts
+	2. product.service.spec.ts
