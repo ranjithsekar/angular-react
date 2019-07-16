@@ -1,0 +1,1 @@
+export const PROD_GET_API = 'http://localhost:6060/restapi-swagger/products';
