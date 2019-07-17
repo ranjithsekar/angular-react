@@ -1,3 +1,29 @@
-<p>
-  view works!
-</p>
+<nav class="nav">
+  <a class="nav-link" href="#" (click)="add()">Add</a>
+  <a class="nav-link" href="#">Export</a>
+  <a class="nav-link" href="#">Delete</a>
+</nav>
+
+<table mat-table #table [dataSource]="productDataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef>Type</th>
+    <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef>Price</th>
+    <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="prodHeaders"></tr>
+  <tr mat-row *matRowDef="let row; columns: prodHeaders;"></tr>
+</table>
