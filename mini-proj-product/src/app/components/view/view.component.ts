@@ -20,17 +20,10 @@ export class ViewComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private matDialog: MatDialog) {
-
   }
 
   ngOnInit() {
     //this.addData();
-    let product = new IProduct();
-    product.id = '666';
-    product.name = 'happy ajay';
-    product.type = 't1';
-    product.price = '200';
-    this.productService.add(product).subscribe(response => { })
     this.productService.getAllProducts().subscribe((response: IProduct[]) => {
       this.productDataSource = new MatTableDataSource<IProduct>(Object.assign(response));
       this.productDataSource.sortingDataAccessor = (item, property) => {
@@ -41,7 +34,20 @@ export class ViewComponent implements OnInit {
   }
 
   public add(): void {
-    const matDialogRef = this.matDialog.open(AddComponent);
+    // let product = new IProduct();
+    // product.id = '7777';
+    // product.name = 'happy ranjith';
+    // product.type = 't21';
+    // product.price = '2050';
+    // this.productService.add(product).subscribe(response => {
+
+    // });
+    const matDialogRef = this.matDialog.open(AddComponent, {
+      data: {
+        name: 'Ranjith'
+      },
+      disableClose: false
+    });
     matDialogRef.afterClosed().subscribe((newProduct: IProduct) => {
       this.productDataSource.data.unshift(newProduct);
       this.productDataSource._updateChangeSubscription();

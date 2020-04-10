@@ -16,23 +16,12 @@ export class AddComponent implements OnInit {
   price: string;
 
   constructor(
-    private matDilogRef: MatDialogRef<AddComponent>,
+    //private matDilogRef: MatDialogRef<AddComponent>,
     @Inject(MAT_DIALOG_DATA) public matDialogData: any,
     private productService: ProductService
   ) { }
 
   ngOnInit() {
-  }
-
-  add(): void {
-    let product = new IProduct();
-    product.id = this.id;
-    product.name = this.name;
-    product.type = this.type;
-    product.price = this.price;
-    this.productService.add(product).subscribe(response => {
-      this.matDilogRef.close(response);
-    })
   }
 
 }
