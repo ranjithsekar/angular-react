@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { BarChart1Component } from './component/bar-chart1/bar-chart1.component';
+import { BarChartComponent } from './component/bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BarChart1Component
+    BarChartComponent
   ],
   imports: [
     BrowserModule, HttpClientModule
