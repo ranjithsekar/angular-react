@@ -16,7 +16,7 @@ export class ProductService {
   }
 
   public add(product: IProduct): Observable<IProduct> {
-    const inputJson = JSON.stringify({ id: product.id, name: product.name, type: product.type, price: product.price });
+    const inputJson = JSON.stringify({ id: product.id, name: product.name, type: product.category, price: product.price });
     const httpOptions: Object = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'

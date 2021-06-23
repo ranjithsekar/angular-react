@@ -1,6 +1,6 @@
 export class IProduct {
     id: string;
     name: string;
-    type: string;
+    category: string;
     price: string;
 }
