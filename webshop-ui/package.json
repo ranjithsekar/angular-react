@@ -1,13 +1,17 @@
 {
   "name": "webshop-ui",
   "version": "0.0.0",
+  "description": "Webshop Application",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+
+    "test": "ng test",
+    "test:chrome-headless": "ng test --watch=false --code-coverage --browsers=ChromiumHeadlessConfigured",
+    "test:chrome-headless-watch": "ng test --code-coverage --browsers=ChromiumHeadlessConfigured"
   },
   "private": true,
   "dependencies": {
