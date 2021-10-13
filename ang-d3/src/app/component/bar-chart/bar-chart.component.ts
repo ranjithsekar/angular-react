@@ -16,6 +16,9 @@ export class BarChartComponent implements OnInit {
   private width = 400 - (this.margin * 2);
   private height = 400 - (this.margin * 2);
 
+  private xAxis;
+  private yAxis;
+
   constructor(private chartService: ChartServiceService) { }
 
   ngOnInit(): void {
@@ -35,38 +38,67 @@ export class BarChartComponent implements OnInit {
 
   private generateBarChart(data: ISalesData[]): void {
     // const tooltip = d3.select('body').append('div').attr('class', 'toolTip');
-    const x = d3.scaleBand()
+    this.xAxis = d3.scaleBand()
       .range([0, this.width])
       .domain(data.map(d => String(d.year)))
       .padding(0.2);
 
-    this.svg.append('g')
+    const g = this.svg.append('g')
       .attr('transform', 'translate(0,' + this.height + ')')
-      .call(d3.axisBottom(x))
+      .call(d3.axisBottom(this.xAxis))
       .selectAll('text')
       .attr('transform', 'translate(-10,0)rotate(-45)')
       .style('text-anchor', 'end');
 
-    const y = d3.scaleLinear()
+    this.yAxis = d3.scaleLinear()
       .domain([1, d3.max(data, (d) => d.revenue)])
       .range([this.height, 0]);
 
-    this.svg.append('g')
-      .call(
-        d3.axisLeft(y)
-          .tickFormat(d3.format('~s'))
-      );
+    this.addxAxisTop();
+    this.addYaxisLeft();
+    this.addYaxisRight();
+    this.formatScales();
 
     this.svg.selectAll('bars')
       .data(data)
       .enter()
       .append('rect')
-      .attr('x', (d: ISalesData) => x(String(d.year)))
-      .attr('y', (d: ISalesData) => y(d.revenue))
-      .attr('width', x.bandwidth())
-      .attr('height', (d: ISalesData) => this.height - y(d.revenue))
+      .attr('x', (d: ISalesData) => this.xAxis(String(d.year)))
+      .attr('y', (d: ISalesData) => this.yAxis(d.revenue))
+      .attr('width', this.xAxis.bandwidth())
+      .attr('height', (d: ISalesData) => this.height - this.yAxis(d.revenue))
       .attr('fill', 'green')
       .on('mouseover', (d: ISalesData, i: number) => this.onMouseOver(d, i));
+  }
+
+  private addxAxisTop(): void {
+    this.svg.append('g')
+      .call(
+        d3.axisTop(this.xAxis));
+  }
+
+  private addYaxisLeft(): void {
+    this.svg.append('g')
+      .call(
+        d3.axisLeft(this.yAxis)
+          .tickSizeInner(-this.width)
+          .tickFormat(d3.format('~s'))
+      );
+  }
+
+  private addYaxisRight(): void {
+    this.svg.append('g')
+      .attr('class', 'y axis')
+      .attr('transform', 'translate(' + this.height + ' ,0)')
+      .call(
+        d3.axisRight(this.yAxis)
+          .tickFormat(d3.format('~s'))
+      );
+  }
+
+  private formatScales(): void {
+    this.svg.selectAll('line').attr('stroke', '#dfdfdf');
+    this.svg.selectAll('text').attr('fill', '#231F20');
   }
 
   public onMouseOver(d, i): void {
