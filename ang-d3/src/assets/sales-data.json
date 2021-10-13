@@ -1,14 +1,18 @@
 [
     {
         "year": 2001,
-        "revenue": 150000
+        "revenue": 11500
     },
     {
         "year": 2002,
-        "revenue": 170000
+        "revenue": 11700
     },
     {
         "year": 2003,
-        "revenue": 190000
+        "revenue": 11000
+    },
+    {
+        "year": 2004,
+        "revenue": 15000
     }
 ]
